@@ -19,3 +19,5 @@ for iter in range(20):
 x=np.linspace(-10,9)
 plt.plot(x,f(x))
 plt.show()
+
+
