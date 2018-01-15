@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 plt.rcParams['axes.unicode_minus']=False #用来正常显示负号
 
-data_train = pd.read_csv("data/train.csv")
+data_train = pd.read_csv("D:\\CodeForFun\\machinelearning\\1.13 courses\\titanic\\data\\train.csv")
 print(data_train.columns)
 
 #看看各乘客等级的获救情况

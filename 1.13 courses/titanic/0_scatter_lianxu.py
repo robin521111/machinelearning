@@ -6,10 +6,9 @@ sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 print(__doc__)
 
 import pandas as pd
-data_train = pd.read_csv("data/train.csv")
+data_train = pd.read_csv("D:\\CodeForFun\\machinelearning\\1.13 courses\\titanic\\data\\train.csv")
 
-print("看每列统计信息", data_train.describe())
-
+print("the stastistics data", data_train.describe ())
 # 连续型数据
 
 import matplotlib

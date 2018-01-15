@@ -12,9 +12,8 @@ import io
 sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 print(__doc__)
 
-
 import pandas as pd
-data_train = pd.read_csv("data/train.csv")
+data_train = pd.read_csv("D:\\CodeForFun\\machinelearning\\1.13 courses\\titanic\\data\\train.csv")
 
 print("看列名", data_train.columns)
 # 数据摸底
@@ -31,7 +30,7 @@ import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 plt.rcParams['axes.unicode_minus']=False #用来正常显示负号
 
-data_train = pd.read_csv("data/train.csv")
+data_train = pd.read_csv("D:\\CodeForFun\\machinelearning\\1.13 courses\\titanic\\data\\train.csv")
 
 plt.subplot2grid((2,3),(1,0), colspan=2)
 data_train.Age[data_train.Pclass == 1].plot(kind='kde')   # plots a kernel desnsity estimate of the subset of the 1st class passanges's age
