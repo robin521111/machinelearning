@@ -98,7 +98,7 @@ def set_Cabin_type(df):
     return df
 
 # (1) 读取数据集
-data_train = pd.read_csv("D:\\project\\peixun\\ai_course_project_px\\1_intro\\4_anli_project_titanic\\Kaggle_Titanic_Chinese\\Kaggle_Titanic-master\\train.csv")
+data_train = pd.read_csv("D:\\CodeForFun\\machinelearning\\1.13 courses\\titanic\\data\\train.csv")
 
 # (2) 特征工程 - 处理缺失值
 data_train, rfr = set_missing_ages(data_train)
