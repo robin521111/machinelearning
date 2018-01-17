@@ -2,3 +2,4 @@
 .vscode/settings.json
 *.gz
 *.npz
+*.csv
