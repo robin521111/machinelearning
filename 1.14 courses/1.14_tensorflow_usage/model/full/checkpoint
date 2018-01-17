@@ -1,0 +1,6 @@
+model_checkpoint_path: "F:\\9_tensorflow\\model\\full\\handwriting-490"
+all_model_checkpoint_paths: "F:\\9_tensorflow\\model\\full\\handwriting-450"
+all_model_checkpoint_paths: "F:\\9_tensorflow\\model\\full\\handwriting-460"
+all_model_checkpoint_paths: "F:\\9_tensorflow\\model\\full\\handwriting-470"
+all_model_checkpoint_paths: "F:\\9_tensorflow\\model\\full\\handwriting-480"
+all_model_checkpoint_paths: "F:\\9_tensorflow\\model\\full\\handwriting-490"
