@@ -4,10 +4,16 @@ from sklearn.linear_model import LogisticRegression
 import numpy as np 
 iris = load_iris()
 
-data = iris.data
-print(data)
-data_new = data[:,0]*data[:,1]
-np.delete(data,[0,1],axis=0)
+data_new = iris.data[:, 0] * iris.data[:, 1]
 
-print(data)
-np.insert(data,0,data_new)
+new_feature = iris.data[:, :2]
+# print(new_feature)
+np.append(new_feature,data_new)
+print(new_feature)
+
+
+# print(data_row)
+# np.delete(iris.data,2,axis=None)
+# print(iris.data)
+# np.insert(iris.data,0,data_new)
+# print(iris.data)

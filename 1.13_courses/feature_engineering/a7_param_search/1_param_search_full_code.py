@@ -22,25 +22,32 @@ from sklearn.preprocessing import PolynomialFeatures
 iris = load_iris()
 X = iris.data
 y = iris.target
+print('========================')
 print(X, y)
+print('========================')
 # (0) feature engineering
 # the degree-2 polynomial features are [1, a, b, a^2, ab, b^2].
 poly = PolynomialFeatures(2)
 X_Poly = poly.fit_transform(X)
 #X = X_Poly
+print('========================')
 print(X_Poly)
+print('========================')
 
 # (1) test train split #
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=4)
 knn = KNeighborsClassifier(n_neighbors=5)
-
+print('*****')
+print(X_train)
+print('*****')
 # (2) Model training
 knn.fit(X_train, y_train)
 
 # (3) Predict & Estimate the score
-# y_pred = knn.predict(X_test)
-# print(knn.score(X_test, y_test))
-
+y_pred = knn.predict(X_test)
+print('========================')
+print(knn.score(X_test, y_test))
+print('========================')
 # (4) Parameter tuining:
 # this is how to use cross_val_score to choose model and configs #
 from sklearn.cross_validation import cross_val_score
