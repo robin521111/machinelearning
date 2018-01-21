@@ -16,8 +16,10 @@ import numpy as np
 from sklearn.externals import joblib
 from sklearn.decomposition import PCA
 
-train = np.load("data/train.npz")
-test = np.load("data/test.npz")
+train = np.load(
+    "/Users/robin/Documents/MachineLearning/machinelearning/1.20_courses/data/train.npz")
+test = np.load(
+    "/Users/robin/Documents/MachineLearning/machinelearning/1.20_courses/data/test.npz")
 pca = PCA(n_components=30)
 X_r = pca.fit(train["images"]).transform(train["images"])
 vect_t = np.array([[itr] for itr in range(10)])

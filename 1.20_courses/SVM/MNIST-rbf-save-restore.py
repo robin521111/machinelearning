@@ -13,8 +13,10 @@ from sklearn.svm import SVC
 import numpy as np
 from sklearn.externals import joblib
 
-train = np.load("data/train.npz")
-test = np.load("data/test.npz")
+train = np.load(
+    "/Users/robin/Documents/MachineLearning/machinelearning/1.20_courses/data/train.npz")
+test = np.load(
+    "/Users/robin/Documents/MachineLearning/machinelearning/1.20_courses/data/test.npz")
 
 vect_t = np.array([[itr] for itr in range(10)])
 X_train = train["images"][:6000]
@@ -24,10 +26,12 @@ y_test = np.dot(test["labels"][:6000], vect_t).ravel().astype("int")
 
 
 #定义SVM分类器类
-lsvm = joblib.load("model/svm_model")
+lsvm = joblib.load(
+    "/Users/robin/Documents/MachineLearning/machinelearning/1.20_courses/model/svm_model")
 print("Applying...")
 y_pdt = lsvm.predict(X_test)
-joblib.dump(lsvm, "model/svm_model")
+joblib.dump(
+    lsvm, "/Users/robin/Documents/MachineLearning/machinelearning/1.20_courses/model/svm_model")
 dts = len(np.where(y_pdt==y_test)[0])/len(y_test)
 
 print("{} 精度:{:.3f}".format("rbf", dts*100))

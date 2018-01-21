@@ -16,7 +16,6 @@
 """
 print(__doc__)
 
-
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB

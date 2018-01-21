@@ -17,7 +17,7 @@ from sklearn.datasets import make_moons, make_circles, make_classification
 X, y = make_classification(n_features=2, n_redundant=0, n_informative=2,
                            random_state=1, n_clusters_per_class=1, class_sep=0.2)
 #定义SVM分类器类
-lsvm = SVC(kernel='rbf', gamma=100, C=1.0)
+lsvm = SVC(kernel='rbf', gamma=6, C=1.0)
 #训练过程
 lsvm.fit(X, y)
 #绘图库引入

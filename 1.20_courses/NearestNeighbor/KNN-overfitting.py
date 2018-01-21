@@ -19,7 +19,7 @@ from sklearn.datasets import make_moons, make_circles, make_classification
 X, y = make_classification(n_features=2, n_redundant=0, n_informative=2,
                            random_state=1, n_clusters_per_class=1, class_sep=0.2)
 #定义随KNN分类器
-knn = KNeighborsClassifier(n_neighbors=1)
+knn = KNeighborsClassifier(n_neighbors=4)
 #训练过程
 knn.fit(X, y)
 #绘图库引入

@@ -12,8 +12,10 @@ print(__doc__)
 from sklearn.svm import SVC
 import numpy as np
 
-train = np.load("data/train.npz")
-test = np.load("data/test.npz")
+train = np.load(
+    "/Users/robin/Documents/MachineLearning/machinelearning/1.20_courses/data/train.npz")
+test = np.load(
+    "/Users/robin/Documents/MachineLearning/machinelearning/1.20_courses/data/train.npz")
 
 vect_t = np.array([[itr] for itr in range(10)])
 X_train = train["images"][:6000]
