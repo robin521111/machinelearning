@@ -9,11 +9,11 @@ print(W.name)
 print(W1.name)
 
 with tf.variable_scope("first-nn-layer") as scope:
-    W = tf.get_variable("W", [784, 10])
-    b = tf.get_variable("b", [10])
+    W1 = tf.get_variable("W", [784, 10])
+    b1 = tf.get_variable("b", [10])
 with tf.variable_scope("second-nn-layer") as scope:
-    W = tf.get_variable("W", [784, 10])
-    b = tf.get_variable("b", [10])
+    W2 = tf.get_variable("W", [784, 10])
+    b2 = tf.get_variable("b", [10])
 with tf.variable_scope("second-nn-layer", reuse=True):
     W3 = tf.get_variable("W", [784, 10])
     b3 = tf.get_variable("b", [10])
