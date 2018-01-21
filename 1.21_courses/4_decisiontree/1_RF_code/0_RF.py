@@ -6,7 +6,7 @@ iris = load_iris()
 y = iris['target']
 X = iris['data']
 
-clf = RandomForestClassifier(criterion='gini', max_depth=2, n_estimators=5)
+clf = RandomForestClassifier(criterion='gini', max_depth=7, n_estimators=9)
 clf.fit(X, y)
 print(clf.feature_importances_)
 print(clf.predict([[0, 0, 0, 0]]))

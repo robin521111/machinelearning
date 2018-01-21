@@ -1,12 +1,20 @@
 # -*- coding: utf-8 -*-
-# (1)
+# 加载相关模块和库
+import sys
+import io
+#改变标准输出的默认编码
+sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
+"""
+本次实战选择决策书作为分类算法，因此可以避免问题
+至此来观察数据特征，以更好的选择算法
+乘客等级-获救比例
+"""
 import pandas as pd #数据分析
 import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 plt.rcParams['axes.unicode_minus']=False #用来正常显示负号
 
-data_train = pd.read_csv(
-    "/Users/robin/Documents/MachineLearning/machinelearning/1.21_courses/4_decisiontree/6_titanic/Kaggle_Titanic-master/train.csv")
+data_train = pd.read_csv("data/train.csv")
 print(data_train.columns)
 
 #看看各乘客等级的获救情况

@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 plt.rcParams['axes.unicode_minus']=False #用来正常显示负号
 
-data_train = pd.read_csv("D:\\project\\peixun\\ai_course_project_px\\1_intro\\4_anli_project_titanic\\Kaggle_Titanic_Chinese\\Kaggle_Titanic-master\\train.csv")
+data_train = pd.read_csv(
+    "/Users/robin/Documents/MachineLearning/machinelearning/1.21_courses/4_decisiontree/6_titanic/Kaggle_Titanic-master/train.csv")
 
 #有中文出现的情况，需要u'内容'
 fig = plt.figure()

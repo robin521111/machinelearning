@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+# 加载相关模块和库
+import sys
+import io
+#改变标准输出的默认编码
+sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 import numpy as np
 import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
@@ -49,7 +54,7 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None, n_jobs=1,
         plt.fill_between(train_sizes, test_scores_mean - test_scores_std, test_scores_mean + test_scores_std,
                          alpha=0.1, color="r")
         plt.plot(train_sizes, train_scores_mean, 'o-', color="b", label=u"训练集上得分")
-        plt.plot(train_sizes, test_scores_mean, 'o-', color="r", label=u"交叉验证集上得分")
+        plt.plot(train_sizes, test_scores_mean, 'o-', color="r", label=u"测试集上得分")
 
         plt.legend(loc="best")
 
@@ -92,10 +97,8 @@ def set_Cabin_type(df):
     df.loc[(df.Cabin.isnull()), 'Cabin'] = "No"
     return df
 
-
 # (1) 读取数据集
-data_train = pd.read_csv(
-    "/Users/robin/Documents/MachineLearning/machinelearning/1.21_courses/4_decisiontree/6_titanic/Kaggle_Titanic-master/train.csv")
+data_train = pd.read_csv("D:\\project\\peixun\\ai_course_project_px\\1_intro\\4_anli_project_titanic\\Kaggle_Titanic_Chinese\\Kaggle_Titanic-master\\train.csv")
 
 # (2) 特征工程 - 处理缺失值
 data_train, rfr = set_missing_ages(data_train)
@@ -118,17 +121,7 @@ dummies_Pclass = pd.get_dummies(data_train['Pclass'], prefix= 'Pclass')
 df = pd.concat([data_train, dummies_Cabin, dummies_Embarked, dummies_Sex, dummies_Pclass], axis=1)
 df.drop(['Pclass', 'Name', 'Sex', 'Ticket', 'Cabin', 'Embarked'], axis=1, inplace=True)
 
-# (4) 特征工程 - 归一化
-# 接下来我们要接着做一些数据预处理的工作，比如scaling，将一些变化幅度较大的特征化到[-1,1]之内
-# 这样可以加速logistic regression的收敛
-import sklearn.preprocessing as preprocessing
-scaler = preprocessing.StandardScaler()
-age_scale_param = scaler.fit(df['Age'])
-df['Age_scaled'] = scaler.fit_transform(df['Age'], age_scale_param)
-fare_scale_param = scaler.fit(df['Fare'])
-df['Fare_scaled'] = scaler.fit_transform(df['Fare'], fare_scale_param)
-
-# (5) 特征工程 - 特征抽取
+# (4) 特征工程 - 特征抽取
 # 我们把需要的feature字段取出来，转成numpy格式，使用scikit-learn中的LogisticRegression建模
 train_df = df.filter(regex='Survived|Age_.*|SibSp|Parch|Fare_.*|Cabin_.*|Embarked_.*|Sex_.*|Pclass_.*')
 #train_df.to_csv("processed_titanic.csv" , encoding = "utf-8")
@@ -139,10 +132,10 @@ y = train_np[:, 0]
 # X即特征属性值
 X = train_np[:, 1:]
 
-# (6) 模型构建与训练
-#clf = linear_model.LogisticRegression(C=1.0, penalty='l1', tol=1e-6)
-clf = RandomForestClassifier(criterion='gini', max_depth=2, n_estimators=5)
-clf.fit(X, y)
-
-# (7) 绘制learning curve
+# (5) 模型构建与训练
+#clf = linear_model.LogisticRegression(C=100.0, penalty='l1', tol=1e-6)
+#clf = RandomForestClassifier(criterion='gini', max_depth=5, n_estimators=5)
+import xgboost as xgb
+clf = xgb.XGBClassifier(max_depth = 3, n_estimators = 5)
+# (6) 绘制learning curve
 plot_learning_curve(clf, u"学习曲线", X, y)

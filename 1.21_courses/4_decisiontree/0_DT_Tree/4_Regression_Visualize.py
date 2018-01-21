@@ -14,7 +14,7 @@ X = np.sort(5 * rng.rand(80, 1), axis=0)
 y = np.sin(X).ravel() 
 
 # Fit regression model
-regr_1 = DecisionTreeRegressor(max_depth=2)
+regr_1 = DecisionTreeRegressor(max_depth=1)
 regr_2 = DecisionTreeRegressor(max_depth=5)
 regr_1.fit(X, y)
 regr_2.fit(X, y)

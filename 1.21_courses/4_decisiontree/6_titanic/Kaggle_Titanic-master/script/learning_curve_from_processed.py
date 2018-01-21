@@ -57,8 +57,10 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None, n_jobs=1,
     diff = (train_scores_mean[-1] + train_scores_std[-1]) - (test_scores_mean[-1] - test_scores_std[-1])
     return midpoint, diff
 
+
 # (1) 读取数据集
-data_train = pd.read_csv("D:\\project\\peixun\\ai_course_project_px\\1_intro\\4_anli_project_titanic\\Kaggle_Titanic_Chinese\\Kaggle_Titanic-master\\script\\processed_titanic.csv")
+data_train = pd.read_csv(
+    "/Users/robin/Documents/MachineLearning/machinelearning/1.21_courses/4_decisiontree/6_titanic/Kaggle_Titanic-master/script/processed_titanic.csv")
 train_np = data_train.as_matrix()
 
 # y即Survival结果
