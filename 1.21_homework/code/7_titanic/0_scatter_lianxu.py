@@ -6,7 +6,7 @@ sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 print(__doc__)
 
 import pandas as pd
-data_train = pd.read_csv("data/train.csv")
+data_train = pd.read_csv("C:\\Codeforfun\\machinelearning\\1.21_homework\\code\\7_titanic\\data\\train.csv")
 
 print("看每列统计信息", data_train.describe())
 

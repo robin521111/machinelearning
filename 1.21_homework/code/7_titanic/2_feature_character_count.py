@@ -26,7 +26,7 @@ print(__doc__)
 
 import numpy as np
 import pandas as pd
-data_train = pd.read_csv("data/train.csv")
+data_train = pd.read_csv("C:\\Codeforfun\\machinelearning\\1.21_homework\\code\\7_titanic\\data\\train.csv")
 
 data = data_train.values
 

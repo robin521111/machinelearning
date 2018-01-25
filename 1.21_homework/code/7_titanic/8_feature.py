@@ -13,8 +13,8 @@ print(__doc__)
 
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
-df = pd.read_csv("data/fix_data_tai2.csv")
+df = pd.read_csv("C:\Codeforfun\machinelearning\1.21_homework\code\7_titanic\data\fix_data_tai2.csv")
 
 df = df.filter(regex='Survived|Age_.*|SibSp|Parch|Fare_.*|Cabin_.*|Embarked_.*|Sex_.*|Pclass_.*')
 #train_df.to_csv("processed_titanic.csv" , encoding = "utf-8")
-df.to_csv("data/fix_data_tai3.csv")
+df.to_csv("C:\Codeforfun\machinelearning\1.21_homework\code\7_titanic\data\fix_data_tai3.csv")

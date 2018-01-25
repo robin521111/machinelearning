@@ -20,7 +20,7 @@ print(__doc__)
 
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
-data_train = pd.read_csv("data/fix_data_tai1.csv")
+data_train = pd.read_csv("C:\Codeforfun\machinelearning\1.21_homework\code\7_titanic\data\fix_data_tai1.csv")
 
 
 dummies_Cabin = pd.get_dummies(data_train['Cabin'], prefix= 'Cabin')
