@@ -29,8 +29,10 @@ encoder_data2 = data2.cat.codes
 print(encoder_data2.head())
 
 
-le.fit(data2)
-print(data2)
+le.fit(encoder_data2)
+
+
+
 # print(data_train.dtypes)
 # print(data_train[:,-1].value_counts())
 # le.fit(data_value)
