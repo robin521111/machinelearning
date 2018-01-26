@@ -36,12 +36,12 @@ from sklearn.metrics import accuracy_score
 acc = accuracy_score(Y_pred, Y_test)
 accPer = '{:.1%}'.format(acc)
 
+print(classifier.score(X_test,Y_test))
+# sepalLength = input("Enter a Sepal Length: ")
+# sepalWidth = input("Enter a Sepal Width: ")
+# petalLength = input("Enter a Petal Length: ")
+# petalWidth = input("Enter a Petal Width: ")
 
-sepalLength = input("Enter a Sepal Length: ")
-sepalWidth = input("Enter a Sepal Width: ")
-petalLength = input("Enter a Petal Length: ")
-petalWidth = input("Enter a Petal Width: ")
+# guess = iris.target_names[classifier.predict([[sepalLength, sepalWidth, petalLength, petalWidth]])]
 
-guess = iris.target_names[classifier.predict([[sepalLength, sepalWidth, petalLength, petalWidth]])]
-
-print("The probably species is %s. With a test accuracy of %s"%(guess,accPer))
+# print("The probably species is %s. With a test accuracy of %s"%(guess,accPer))
