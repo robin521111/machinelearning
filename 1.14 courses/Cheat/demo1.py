@@ -6,7 +6,7 @@ import numpy as np
 
 #读取数据
 data = pd.read_csv(
-    "/Users/robin/Documents/MachineLearning/1.14 tensorflow usage/data/creditcard.csv")
+    "C:\CodeForFun\\machinelearning\\1.14 courses\\data\\creditcard.csv")
 class1 = data[data.Class==0]
 class2 = data[data.Class==1]
 print(len(class1))
