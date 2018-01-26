@@ -8,12 +8,13 @@ data_train = pd.read_csv("C:\\Codeforfun\\machinelearning\\1.21_homework\\code\\
 print(data_train.head)
 
 
+from sklearn.preprocessing import OneHotEncoder
+enc = OneHotEncoder()
+data3 = data_train["Embarked"]
 
-
+print(type(data3))
+enc.fit([data3,[1,2,1]])
 
 
 # onehot = OneHotEncoder()
-
-
-
 # onehot.fit(data_train)
