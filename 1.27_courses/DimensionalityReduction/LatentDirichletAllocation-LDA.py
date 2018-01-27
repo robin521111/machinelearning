@@ -38,7 +38,7 @@ try:
             seg_list = jieba.cut(txt, cut_all=False)
             words.append(" ".join(seg_list))
         print("Finished!")
-        np.savez("data/words.npz", data=np.array(words), label=np.array(file_class))
+        np.savez("/Users/robin/Documents/MachineLearning/machinelearning/1.27_courses/data/words.npz", data=np.array(words), label=np.array(file_class))
         return words, file_class
 except:
     pass
@@ -50,7 +50,8 @@ def vector():
     """
     向量化并用LDA进行降维
     """
-    data_files = np.load("data/words.npz")
+    data_files = np.load(
+        "/Users/robin/Documents/MachineLearning/machinelearning/1.27_courses/data/words.npz")
     topic = set(data_files['label'])
     n_topic = len(topic)
     print(n_topic)
@@ -75,26 +76,33 @@ def vector():
         message = ([feature_names[i]
                              for i in topic.argsort()[:200 - 1:-1]])
         topic_words.append(message)
-        np.savez("data/words-cloud.npz", topic=np.array(topic_words), data=lines)
+        np.savez("/Users/robin/Documents/MachineLearning/machinelearning/1.27_courses/data/words-cloud.npz",
+                 topic=np.array(topic_words), data=lines)
 import treeview
 def view_topic():
     """
     将主题进行绘图
     """
-    files = np.load("data/words-cloud.npz")
+    files = np.load(
+        "/Users/robin/Documents/MachineLearning/machinelearning/1.27_courses/data/words-cloud.npz")
     for idx, itr in enumerate(files['topic']):
-        treeview.view_cloud(itr, "figure/topic-%d.html"%idx)
+        treeview.view_cloud(
+            itr, "/Users/robin/Documents/MachineLearning/machinelearning/1.27_courses/figure/topic-%d.html" % idx)
     data = []
 
 if __name__ == "__main__":
     #vector()
     view_topic()
-    data_files = np.load("data/words.npz")
+    data_files = np.load(
+        "/Users/robin/Documents/MachineLearning/machinelearning/1.27_courses/data/words.npz")
     data_files = data_files['data']
-    outfile = open("figure/article.txt", "w")
+    outfile = open(
+        "/Users/robin/Documents/MachineLearning/machinelearning/1.27_courses/figure/article.txt", "w")
     for itr in range(6):
         outfile.write("\n%s%d%s\n"%("="*6,itr,"="*6))
         outfile.write(data_files[itr].replace(" ", ""))
            
-    data = np.load("data/words-cloud.npz")['data']
-    treeview.view_weigh(data, "figure/article.html")
+    data = np.load(
+        "/Users/robin/Documents/MachineLearning/machinelearning/1.27_courses/data/words-cloud.npz")['data']
+    treeview.view_weigh(
+        data, "/Users/robin/Documents/MachineLearning/machinelearning/1.27_courses/figure/article.html")

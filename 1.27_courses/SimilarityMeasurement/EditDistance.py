@@ -28,7 +28,7 @@ def EditDist(sm,sn):
             matrix[i][j]=min(matrix[i-1][j]+1,matrix[i][j-1]+1,matrix[i-1][j-1]+cost)
     return matrix[m-1][n-1]
 
-s1 = ['a', 'e', 'c', 'd']
-s2 = ['a', 'e', 'd']
+s1 = ['a', 'e', 'c', 'd','e','f']
+s2 = ['a', 'e', 'd','j']
 
 print(EditDist(s1, s2))

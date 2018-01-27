@@ -5,7 +5,7 @@ from sklearn.cluster import KMeans
 X, y = make_classification(n_features=2, n_redundant=0, n_informative=2,
                            random_state=1, n_clusters_per_class=1, class_sep=0.2)
 
-clt = KMeans(n_clusters=2, random_state=0)
+clt = KMeans(n_clusters=5, random_state=0)
 clt.fit(X)
 
 import matplotlib.pyplot as plt
