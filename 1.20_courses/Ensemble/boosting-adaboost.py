@@ -34,7 +34,9 @@ xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.1),
 #预测可能性
 Z = adb.predict_proba(np.c_[xx.ravel(), yy.ravel()])[:, 1]
 Z = Z.reshape(xx.shape)
+
 plt.contourf(xx, yy, Z, alpha=.8)
+
 #绘制散点图
 plt.scatter(X[:, 0], X[:, 1], c=y, edgecolors='k')
 plt.title("AdaBoost")
