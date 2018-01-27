@@ -20,7 +20,7 @@ from sklearn.feature_selection import chi2#选择K个最好的特征，返回选
 from sklearn.datasets import load_iris
 iris = load_iris()
 # k Number of top features to select. The “all” option bypasses selection, for use in a parameter search.
-selector = SelectKBest(chi2, k=2).fit(iris.data, iris.target)
+selector = SelectKBest(chi2, k=4).fit(iris.data, iris.target)
 data = selector.transform(iris.data)
 print(data)
 print(selector.scores_)
