@@ -4,3 +4,5 @@
 *.npz
 *.csv
 *.pkz
+*.txt
+*.html
