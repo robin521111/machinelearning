@@ -16,7 +16,7 @@ def full_layer(input_tensor, out_dim, name='full'):
 
 
 data = pd.read_csv(
-    "/Users/robin/Documents/MachineLearning/1.14 tensorflow usage/data/creditcard.csv")
+    "D:\\CodeForFun\\machinelearning\\1.14 courses\\data\\creditcard.csv")
 class1 = data[data.Class==0]
 class2 = data[data.Class==1]
 print(len(class1))
@@ -46,6 +46,7 @@ for itr in range(30000):
     idx2 = np.random.randint(400)
     feedx = np.concatenate([data1[idx1:idx1+25, 1:29],
                             data2[idx2:idx2+25, 1:29]])
+    
     feedy = np.zeros([50, 2])
     feedy[:25, 0] = 1
     feedy[25:, 1] = 1
