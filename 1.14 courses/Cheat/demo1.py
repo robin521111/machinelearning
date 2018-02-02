@@ -3,10 +3,11 @@
 import pandas as pd
 import tensorflow as tf
 import numpy as np
-
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 #读取数据
 data = pd.read_csv(
-    "C:\CodeForFun\\machinelearning\\1.14 courses\\data\\creditcard.csv")
+    "D:\\CodeForFun\\machinelearning\\1.14 courses\\data\\creditcard.csv")
 class1 = data[data.Class==0]
 class2 = data[data.Class==1]
 print(len(class1))
@@ -15,12 +16,13 @@ print(np.shape(class1.values))
 #获取数据值
 data1 = class1.values
 data2 = class2.values
+
 #定义神经网络
-x = tf.placeholder(tf.float32, [None, 28], name="input_x")
+x = tf.placeholder(tf.float32, [None, 30], name="input_x")
 label = tf.placeholder(tf.float32, [None, 2], name="input_y")
 #定义权值
 W1 = tf.get_variable('W1',
-                    [28, 28], 
+                    [30, 28], 
                     dtype=tf.float32, 
                     initializer=tf.truncated_normal_initializer(stddev=0.1))
 b1 = tf.get_variable('b1', 
@@ -40,8 +42,11 @@ b2 = tf.get_variable('b2',
                     initializer=tf.constant_initializer(0))
 h2 = tf.matmul(h1, W2)+b2
 y = tf.nn.sigmoid(h2)
-#定义loss函数
 
+
+#定义loss函数
+print(label.shape)
+print(y.shape)
 loss = tf.reduce_mean(tf.square(y-label))
 
 correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(label, 1))
@@ -54,14 +59,20 @@ sess.run(tf.global_variables_initializer())
 for itr in range(300):
     idx1 = np.random.randint(284000)
     idx2 = np.random.randint(400)
-    feedx = np.concatenate([data1[idx1:idx1+25, 1:29],
-                            data2[idx2:idx2+25, 1:29]])
+    feedx = np.concatenate([data1[idx1:idx1, :30],
+                            data2[idx2:idx2, :30]])
+
+    
+    
+    print("this is feedx",feedx.shape)
+
     feedy = np.zeros([50, 2])
     feedy[:25, 0] = 1
     feedy[25:, 1] = 1
+    print("this is the feedy",feedy.shape)
     sess.run(train_step, feed_dict={x: feedx, label: feedy})
     if itr % 1 == 0:
-        feedx = np.concatenate([data1[3000:3000+400, 1:29],
+        feedx = np.concatenate([data1[3000:3000+400, 1:32],
                                 data2[:400, 1:29]])
         feedy = np.zeros([800, 2])
         feedy[:400, 0] = 1

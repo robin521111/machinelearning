@@ -3,7 +3,7 @@
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
 #获取数据
-mnist = input_data.read_data_sets("data/", one_hot=True)
+mnist = input_data.read_data_sets("D:\\CodeForFun\\machinelearning\\1.14 courses\\data", one_hot=True)
 #构建网络模型
 #x，label分别为图形数据和标签数据
 
