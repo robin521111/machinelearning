@@ -16,7 +16,7 @@ def variable_summaries(var , name = "layer"):
 
 
 #read data
-data = pd.read_csv("C:\CodeForFun\machinelearning\1.14 courses\data\Iris.csv")
+data = pd.read_csv("C:\\CodeForFun\\machinelearning\\1.14 courses\\data\\Iris.csv")
 
 #get class name 
 c_name = set(data.name.values)

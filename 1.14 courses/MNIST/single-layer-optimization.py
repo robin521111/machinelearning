@@ -34,7 +34,7 @@ sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 train_writer = tf.summary.FileWriter("mnist-logdir", sess.graph)
 #迭代过程
-mnist = input_data.read_data_sets("data/", one_hot=True)
+mnist = input_data.read_data_sets("C:\\CodeForFun\\machinelearning\\1.14 courses\\data", one_hot=True)
 for itr in range(1000):
     batch_xs, batch_ys = mnist.train.next_batch(100)
     sess.run(train_step, feed_dict={x: batch_xs, label: batch_ys})
@@ -48,7 +48,7 @@ import numpy as np
 import matplotlib as mpl
 mpl.style.use('fivethirtyeight')
 #获取W取值
-W = sess.run(W.value())
+# W = sess.run(W.value)
 #绘图过程
 fig = plt.figure()
 ax = fig.add_subplot(221)

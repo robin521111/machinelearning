@@ -19,7 +19,7 @@ def variable_summaries(var, name="layer"):
 
 #读取数据
 data = pd.read_csv(
-    "/Users/robin/Documents/MachineLearning/1.14 tensorflow usage/data/iris.data.csv")
+    "C:\\CodeForFun\\machinelearning\\1.14 courses\\data\\Iris.csv")
 #获取种类
 c_name = set(data.name.values)
 print(c_name)

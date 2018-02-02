@@ -16,10 +16,13 @@ mpl.style.use('fivethirtyeight')
 mean = [0, 0]   # 平均值
 cov = [[1, 0.9], [0.9, 1]]   # 协方差
 x, y = np.random.multivariate_normal(mean, cov, 1000).T
+print(x)
+print('this is y',y)
 x = np.reshape(x, [-1, 1])
 y = np.reshape(y, [-1, 1])
 X = np.concatenate([x, y], axis=1)
 label = np.zeros_like(x[:,0])
+
 label[x[:,0]>1]=1
 label[x[:,0]<-1]=1
 pca = PCA(n_components=0.99)

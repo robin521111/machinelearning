@@ -4,7 +4,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
 import os
 #获取数据
-mnist = input_data.read_data_sets("data/", one_hot=True)
+mnist = input_data.read_data_sets("C:\\CodeForFun\\machinelearning\\1.14 courses\\data", one_hot=True)
 #构建网络模型
 #x，label分别为图形数据和标签数据
 x = tf.placeholder(tf.float32, [None, 784])
@@ -49,7 +49,7 @@ ax.matshow(np.reshape(W[:,1],[28,28]), cmap=plt.get_cmap("Purples"))
 ax = fig.add_subplot(222)
 ax.matshow(np.reshape(W[:,2],[28,28]), cmap=plt.get_cmap("Purples"))
 ax = fig.add_subplot(223)
-ax.matshow(np.reshape(W[:,3],[28,28]), cmap=plt.get_cmap("Purples"))
+ax.matshow(np.reshape(W[:,9],[28,28]), cmap=plt.get_cmap("Purples"))
 ax = fig.add_subplot(224)
-ax.matshow(np.reshape(W[:,4],[28,28]), cmap=plt.get_cmap("Purples"))
+ax.matshow(np.reshape(W[:,7],[28,28]), cmap=plt.get_cmap("Purples"))
 plt.show()
