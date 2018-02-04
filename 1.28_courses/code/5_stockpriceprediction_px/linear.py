@@ -1,6 +1,7 @@
 import csv
 import numpy as np
 from sklearn import linear_model
+from sklearn.neighbors import KNeighborsRegressor
 import matplotlib.pyplot as plt
 
 dates = []
@@ -19,7 +20,7 @@ def predict_price(dates, prices, x):
 	dates = np.reshape(dates, (len(dates),1)) # converting to matrix of n X 1
 	prices = np.reshape(prices, (len(prices),1))
 	
-	linear_mod = linear_model.LinearRegression() # defining the linear regression model
+	linear_mod = KNeighborsRegressor() # defining the linear regression model
 	linear_mod.fit(dates, prices) # fitting the data points in the model
 
 	plt.scatter(dates, prices, color= 'black', label= 'Data') # plotting the initial datapoints 
@@ -32,7 +33,9 @@ def predict_price(dates, prices, x):
 	
 	return linear_mod.predict(x)[0][0], linear_mod.coef_[0][0], linear_mod.intercept_[0]
 
-get_data('D:\\project\\peixun\\ai_course_project_px\\6_regression\\7_stockpriceprediction_px\\goog.csv') # calling get_data method by passing the csv file to it
+
+# calling get_data method by passing the csv file to it
+get_data('/Users/robin/Documents/MachineLearning/machinelearning/1.28_courses/code/5_stockpriceprediction_px/goog.csv')
 print("Dates- ", dates)
 print("Prices- ", prices)
 
