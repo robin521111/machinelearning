@@ -1,6 +1,6 @@
 import pandas as pd 
 import numpy as np 
-data_train = pd.read_csv("C:\\Codeforfun\\machinelearning\\1.21_homework\\code\\7_titanic\\data\\train.csv")
+data_train = pd.read_csv("D:\\CodeForFun\\machinelearning\\1.21_homework\\code\\7_titanic\\data\\train.csv")
 
 # print(data_train.info())
 # print(data_train.describe)
