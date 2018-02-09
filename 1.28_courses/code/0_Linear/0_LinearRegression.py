@@ -11,6 +11,7 @@ diabetes = datasets.load_diabetes()
 # Use only one feature
 diabetes_X = diabetes.data[:, np.newaxis, 2]
 
+
 # Split the data into training/testing sets
 diabetes_X_train = diabetes_X[:-20]
 diabetes_X_test = diabetes_X[-20:]

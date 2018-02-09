@@ -6,3 +6,5 @@
 *.pkz
 *.txt
 *.html
+*.png
+*.pyc

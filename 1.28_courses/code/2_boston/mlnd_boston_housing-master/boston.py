@@ -4,7 +4,8 @@ import pandas as pd
 import visuals as vs # Supplementary code
 
 # 载入波士顿房屋的数据集
-data = pd.read_csv('housing.csv')
+data = pd.read_csv(
+    '/Users/robin/Documents/MachineLearning/machinelearning/1.28_courses/code/2_boston/mlnd_boston_housing-master/housing.csv')
 prices = data['MEDV']
 features = data.drop('MEDV', axis = 1)
     
