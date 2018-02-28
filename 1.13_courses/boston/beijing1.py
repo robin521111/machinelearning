@@ -30,9 +30,11 @@ def fit_model(X, y):
     # 返回网格搜索后的最优模型
     return grid.best_estimator_
 
+
 # Load the Beijing housing dataset
 # 载入北京房屋的数据集
-data = pd.read_csv('bj_housing.csv')
+data = pd.read_csv(
+    '/Users/robin/Documents/MachineLearning/machinelearning/1.13_courses/boston/bj_housing.csv')
 prices = data['Value']
 features = data.drop('Value', axis=1)
 print("Beijing housing dataset has {} data points with {} variables each.".format(*data.shape))
