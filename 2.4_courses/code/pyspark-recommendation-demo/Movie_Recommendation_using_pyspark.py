@@ -66,7 +66,7 @@ if __name__ == "__main__":
     sc = SparkContext(conf=conf)
 
     # 载入打分数据
-    movieLensHomeDir = "D:/data_and_dep/ml-1m/"
+    movieLensHomeDir = "data/ml-1m.zip"
 
     myRatings = loadRatings(join(movieLensHomeDir, "my-ratings.dat"))
     myRatingsRDD = sc.parallelize(myRatings, 1)

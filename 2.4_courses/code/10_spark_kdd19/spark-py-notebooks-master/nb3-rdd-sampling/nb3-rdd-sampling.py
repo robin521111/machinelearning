@@ -31,7 +31,7 @@ import urllib
 # In[2]:
 
 #data_file = "./kddcup.data.gz"
-data_file = "D:/data_and_dep/kddcup.data_10_percent.gz"
+data_file = "data/kddcup.data_10_percent.gz"
 raw_data = sc.textFile(data_file)
 
 

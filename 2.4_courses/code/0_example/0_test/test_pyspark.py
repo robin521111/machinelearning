@@ -1,13 +1,13 @@
 # -*- coding:utf-8 -*- 
 import os
 import sys
-# Path for spark source folder
-os.environ['SPARK_HOME']="D:\data_and_dep\sparkml\software\spark-2.1.0-bin-hadoop2.7\spark-2.1.0-bin-hadoop2.7"
-os.environ['HADOOP_HOME']="D:\data_and_dep\sparkml\software\spark-2.1.0-bin-hadoop2.7\spark-2.1.0-bin-hadoop2.7"
+# # Path for spark source folder
+# os.environ['SPARK_HOME']="D:\data_and_dep\sparkml\software\spark-2.1.0-bin-hadoop2.7\spark-2.1.0-bin-hadoop2.7"
+# os.environ['HADOOP_HOME']="D:\data_and_dep\sparkml\software\spark-2.1.0-bin-hadoop2.7\spark-2.1.0-bin-hadoop2.7"
 
-# # Append pyspark  to Python Path
-sys.path.append("D:\data_and_dep\sparkml\software\spark-2.1.0-bin-hadoop2.7\spark-2.1.0-bin-hadoop2.7\python")
-sys.path.append("D:\data_and_dep\sparkml\software\spark-2.1.0-bin-hadoop2.7\spark-2.1.0-bin-hadoop2.7\python\lib/py4j-0.9-src.zip")
+# # # Append pyspark  to Python Path
+# sys.path.append("D:\data_and_dep\sparkml\software\spark-2.1.0-bin-hadoop2.7\spark-2.1.0-bin-hadoop2.7\python")
+# sys.path.append("D:\data_and_dep\sparkml\software\spark-2.1.0-bin-hadoop2.7\spark-2.1.0-bin-hadoop2.7\python\lib/py4j-0.9-src.zip")
 
 
 from pyspark import SparkContext

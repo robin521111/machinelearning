@@ -40,7 +40,7 @@ import urllib
 # In[3]:
 
 #data_file = "./kddcup.data.gz"
-data_file = "D:/data_and_dep/kddcup.data_10_percent.gz"
+data_file = "data/kddcup.data_10_percent.gzz"
 raw_data = sc.textFile(data_file)
 
 print("Train data size is {}".format(raw_data.count()))
