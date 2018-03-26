@@ -54,7 +54,7 @@ g_inference_batch_image.inference_and_visualize_batch_images_car_detection(model
   
 # # (6) 对视频进行车辆检测
 # # apply to video
-# import h_video_car_detection
+import h_video_car_detection
 
-# h_video_car_detection.video_car_detection()
+h_video_car_detection.video_car_detection()
 
