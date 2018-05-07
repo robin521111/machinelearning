@@ -1,6 +1,6 @@
 import pandas as pd 
 import numpy as np 
-data_train = pd.read_csv("C:\\Codeforfun\\machinelearning\\1.21_homework\\code\\7_titanic\\data\\train.csv")
+data_train = pd.read_csv("D:\\CodeForFun\\machinelearning\\1.21_homework\\code\\7_titanic\\data\\train.csv")
 
 # print(data_train.info())
 # print(data_train.describe)
@@ -27,12 +27,9 @@ data2 = data_train["Embarked"].astype('category')
 
 encoder_data2 = data2.cat.codes
 print(encoder_data2.head())
-
-
 le.fit(encoder_data2)
 
-
-
+# print(data2)
 # print(data_train.dtypes)
 # print(data_train[:,-1].value_counts())
 # le.fit(data_value)
