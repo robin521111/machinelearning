@@ -8,10 +8,6 @@ data_train = pd.read_csv("C:\\Codeforfun\\machinelearning\\1.21_homework\\code\\
 print(data_train.head)
 
 
-
-
-
-
 # onehot = OneHotEncoder()
 
 
